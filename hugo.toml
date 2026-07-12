@@ -1,0 +1,26 @@
+baseURL = 'https://neoboi76.github.io/sumicare-docs/'
+languageCode = 'en-us'
+title = 'sumicare-blog'
+theme = 'hugo-bearblog'
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+  
+  [[menu.main]]
+    name = "System Overview"
+    url = "/system-overview/"
+    weight = 3
+  
+  [[menu.main]]
+    name = "System Guide"
+    url = "/system-guide/"
+    weight = 4
+  
