@@ -419,11 +419,9 @@ Example weight assignments (illustrative):
 * "Texture: Oil-based" → adds weight to Aromatherapy (+3), Lomi-Lomi (+2), Swedish (+1)
 * "Duration: 1.5 hours" → adds weight to Aromatherapy w/ Reflex (+3), Ventosa (+2)
 
-### 7.3 AI Enhancement (Optional)
+### 7.3 Disclaimer
 
-If `ANTHROPIC_API_KEY` is configured, `RecommendationExplainerService` calls the Anthropic API after scoring is complete. It passes the top-ranked service and the client's answers, and asks the model to generate a short, friendly explanation of why that service was recommended — recreational framing only, no medical claims, no disease references. The explanation is appended to the recommendation response as a `rationale` string. If the API key is absent or the call fails, the system returns the recommendation without a rationale — the scoring result is unaffected.
-
-The disclaimer ("SumiCare's recommendations are for relaxation purposes only and do not constitute medical advice") is rendered unconditionally on the frontend regardless of whether AI was used.
+The disclaimer ("SumiCare's recommendations are for relaxation purposes only and do not constitute medical advice") is rendered unconditionally on the recommendation results on the frontend.
 
 ---
 
@@ -506,7 +504,7 @@ Three deployment models are available for production, listed by fit for La Sema'
 |Real-Time Volatile State|Redis (required)|Decking ZSET, room occupancy Hash, JWT deny-list, rate limiting, WS session registry|
 |Frontend State|Angular Signals / NgRx|Reactive, predictable state for room map and decking view|
 |POS|Dedicated `pos` backend module + receptionist frontend view|SumiCare owns its own cashier operations; external POS not integrated|
-|Recommendation Engine|Weighted scoring quiz|Deterministic, explainable, no ML; Anthropic API adds optional natural-language rationale|
+|Recommendation Engine|Weighted scoring quiz|Deterministic, explainable, no ML|
 |Biometrics Integration|`BiometricsAdapter` interface|Webhook-first; polling and direct DB fallbacks; decoupled from vendor|
 |Staff TV Display|Out of scope (general version)|Deferred; architecture leaves room in `notification` module for future addition|
 |Docker|Multi-stage Dockerfile + Docker Compose|Used for both local development and production deployment|

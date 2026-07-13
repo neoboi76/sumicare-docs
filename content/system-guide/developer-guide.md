@@ -530,8 +530,7 @@ values. Defaults below are the values shown in `.env.example`.
 ## 7. Commit Conventions
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org/): `type(scope): description`,  
-with an imperative summary. Do **not** include `Claude` or `Co-Authored-By: Claude` trailers, and do not  
-commit `CLAUDE.md`, `.env*`, or `.claude/`.
+with an imperative summary. Do not commit `.env*` files or other local-only configuration.
 
 **Types in use**, with scopes such as `booking`, `cashier`, `web`, `db`, `auth`, `payments`,  
 `notifications`, `reports`, `email`, `public`, `treatment-slip`:
@@ -555,10 +554,11 @@ A scope is optional but encouraged; it names the affected module or surface (e.g
 
 Business-rule and workflow pitfalls, drawn from the project context and observed in the code:
 
-* **Never use the word "automate."** The product **computerizes** paper workflows. Apply this to code,  
-  UI copy, comments-that-don't-exist, and docs.
-* **No comments anywhere.** Java, TypeScript, HTML, XML, YAML — none. Names must carry meaning.
-* **No emojis anywhere** in templates, strings, UI copy, or source.
+* **Terminology: "computerize," not "automate."** The product **computerizes** paper workflows; the term  
+  "automate" is avoided in UI copy and documentation.
+* **Self-documenting code over comments.** The codebase favors meaningful names over inline comments across  
+  Java, TypeScript, HTML, XML, and YAML.
+* **No emojis** in templates, strings, UI copy, or source.
 * **Clients are identified by nickname only.** Real names are never written to operational tables  
   (treatment slips, sessions, bookings, transactions). The `clients` table holds nickname/email/Facebook  
   handle only. Client accounts are optional and non-critical — a session never requires one.
@@ -586,9 +586,8 @@ Business-rule and workflow pitfalls, drawn from the project context and observed
 * **The public site never links to login.** No "Staff sign-in" button or admin icon on the public  
   surface; staff know `/sumicare/login`.
 * **No Maven wrapper.** Use a globally installed Maven 3.9+ for backend builds (`./mvnw` does not exist).
-* **`docs/`, `CLAUDE.md`, `.env*`, and `.claude/` are gitignored.** This guide lives in the gitignored  
-  `docs/` directory and will not be tracked unless `.gitignore` is changed. `CLAUDE.md` is the local  
-  briefing and must never be committed.
+* **`docs/` and `.env*` are gitignored.** This guide lives in the gitignored  
+  `docs/` directory and will not be tracked unless `.gitignore` is changed.
 * **`docker-compose.yml` only defines `redis`.** Despite the documented one-command workflow, the  
   compose file does not start Postgres or the API; run the API (and provide a Postgres) separately as  
   described in Section 1.
