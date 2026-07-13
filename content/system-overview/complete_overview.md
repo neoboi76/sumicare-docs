@@ -1,6 +1,6 @@
 ---
 title: "complete_overview"
-date: 2026-07-12
+date: 2026-07-13
 categories: ["System Overview"]
 ---
 
@@ -447,5 +447,3 @@ All reports must include:
 * The project title: **SumiCare: A Web-Based Spa Operations Management Platform for New Lasema Spa Jjimjilbang**.
 
 ---
-
-*Note: All files for the images associated with the frontend of the system are kept within the attached Magic Patterns project.*
