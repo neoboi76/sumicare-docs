@@ -164,8 +164,6 @@ into other domain modules.
 
 ---
 
-
-
 ## Part 2 — End-to-End Data Flows
 
 ### Flow 1 — Public website booking paid by GCash
