@@ -1,6 +1,6 @@
 ---
 title: "developer-guide"
-date: 2026-07-13
+date: 2026-09-28
 categories: ["System Guide"]
 ---
 
