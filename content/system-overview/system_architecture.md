@@ -1,6 +1,6 @@
 ---
 title: "system_architecture"
-date: 2026-09-28
+date: 2026-10-08
 categories: ["System Overview"]
 ---
 
