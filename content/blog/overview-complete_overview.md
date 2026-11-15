@@ -1,6 +1,6 @@
 ---
 title: "complete_overview"
-date: 2026-10-08
+date: 2026-11-15
 categories: ["System Overview"]
 ---
 
